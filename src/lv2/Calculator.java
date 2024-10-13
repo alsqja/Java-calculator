@@ -1,45 +1,54 @@
 package lv2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Calculator {
-    private int firstNumber;
-    private int secondNumber;
+    private final List<Double> answers = new ArrayList<>();
 
-    private AbstractOperation operation;
-
-    //  operation 을 정해주는 생성자
-    public Calculator(AbstractOperation operation) {
-        this.operation = operation;
-    }
-
-    //  parameter 가 없을 시 기본 생성자 overriding
-    public Calculator() {
-    }
-
-    //  operation Setter
-    public void setOperation(AbstractOperation operation) {
-        this.operation = operation;
-    }
-
-    //  firstNumber Setter
-    public void setFirstNumber(int firstNumber) {
-        this.firstNumber = firstNumber;
-    }
-
-    //  secondNumber Setter
-    public void setSecondNumber(int secondNumber) {
-        this.secondNumber = secondNumber;
-    }
-
-    //  calculate method
-    public double calculate() {
-        double answer = 0;
-        //	일단 answer에 연산 결과 담기
-        try {
-            answer = operation.operate(this.firstNumber, this.secondNumber);
-        } catch (DivideByZero e) {
-            //	DivideByZero 에러 throw 시 메세지 출력
-            System.out.println(e.getMessage());
+    //  answers Getter
+    public double[] getAnswers() {
+        double[] returns = new double[this.answers.size()];
+        for (int i = 0; i < this.answers.size(); i++) {
+            returns[i] = this.answers.get(i);
         }
-        return answer;
+        return returns;
+    }
+
+    //  answers 가장 먼저 저당된 데이터 삭제 메서드
+    public double deleteAnswer() {
+        return this.answers.remove(0);
+    }
+
+    //  answers Setter
+    public double setAnswers(int index, double value) {
+        return this.answers.set(index, value);
+    }
+
+    public double calculate(int firstNum, int secondNum, String operator) {
+        double answer;
+        switch (operator) {
+            case "+" -> {
+                answer = firstNum + secondNum;
+                this.answers.add(answer);
+                return answer;
+            }
+            case "-" -> {
+                answer = firstNum - secondNum;
+                this.answers.add(answer);
+                return answer;
+            }
+            case "*" -> {
+                answer = firstNum * secondNum;
+                this.answers.add(answer);
+                return answer;
+            }
+            case "/" -> {
+                answer = (double) firstNum / secondNum;
+                this.answers.add(answer);
+                return answer;
+            }
+        }
+        return 0;
     }
 }
