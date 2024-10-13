@@ -2,7 +2,7 @@ package lv1;
 
 import java.util.Scanner;
 
-public class Calculator1 {
+public class App {
     public static void main(String[] args) {
         String operator;
         do {
