@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        String operator;
+        char operator;
+        String scInput;
         do {
             Scanner sc = new Scanner(System.in);
             int firstNumber;
@@ -18,17 +19,18 @@ public class App {
             sc.nextLine();  //  엔터 처리
 
             System.out.print("연산자를 입력하세요: ");
-            operator = sc.nextLine();
+            scInput = sc.nextLine();
+            operator = scInput.charAt(0);
 
             switch (operator) {
-                case "+" -> System.out.println(firstNumber + secondNumber);
-                case "-" -> System.out.println(firstNumber - secondNumber);
-                case "*" -> System.out.println(firstNumber * secondNumber);
-                case "/" -> System.out.println((double) firstNumber / secondNumber);
+                case '+' -> System.out.println(firstNumber + secondNumber);
+                case '-' -> System.out.println(firstNumber - secondNumber);
+                case '*' -> System.out.println(firstNumber * secondNumber);
+                case '/' -> System.out.println((double) firstNumber / secondNumber);
             }
 
 
-        } while (!operator.equals("exit"));
+        } while (!scInput.equals("exit"));
         System.out.println("프로그램 종료");
     }
 }
