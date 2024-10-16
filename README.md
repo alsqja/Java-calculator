@@ -24,6 +24,32 @@
   - 괄호, 연산자 별 우선순위 처리
   - 수식에 잘못된 기호 입력 시 예외 처리
 
+## 기능별 시연
+<details>
+  <summary>Lv1</summary>
+  <div markdown="1">
+    <img src="https://github.com/user-attachments/assets/f5d8c098-d942-4942-a902-fc036c9cdce9"/>
+  </div>
+</details>
+<details>
+  <summary>Lv2</summary>
+  <div markdown="1">
+    <img src="https://github.com/user-attachments/assets/f2f9fd81-74fd-4d3e-b83f-05d47e544051"/>
+  </div>
+</details>
+<details>
+  <summary>Lv3</summary>
+  <div markdown="1">
+    <img src="https://github.com/user-attachments/assets/498268fb-ae7c-48b2-99bc-52d43d2551bb"/>
+  </div>
+</details>
+<details>
+  <summary>Advanced</summary>
+  <div markdown="1">
+    <img src="https://github.com/user-attachments/assets/3bad2988-5986-4e5e-a6af-4833d3e282c6"/>
+  </div>
+</details>
+
 ## Requirements
 - Lv1
   - [x] 양의 정수(0 포함)를 입력받기
