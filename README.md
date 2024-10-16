@@ -22,6 +22,7 @@
   - Lv1, Lv2, Lv3 모든 기능
   - 수식으로 입력받아 계산
   - 괄호, 연산자 별 우선순위 처리
+  - 수식에 잘못된 기호 입력 시 예외 처리
 
 ## Requirements
 - Lv1
@@ -64,6 +65,8 @@
   - [x] Shunting Yard Algorithm 을 활용하여 수식 형태로 입력받아 계산
   - [x] 추상클래스를 활용한 연산
   - [x] Exception 을 이용한 예외 처리
+    - [x] 0으로 나누기 예외
+    - [x] 수식에 잘못된 연산자 있을 경우 예외
 
 ## TroubleShooting
 - [동적으로 제네릭 타입 정하기](https://velog.io/@alsqja2626/Trouble-Shooting-input-type%EC%97%90-%EB%94%B0%EB%A5%B8-Generic-%EC%84%A4%EC%A0%95)
