@@ -3,7 +3,7 @@ package advanced;
 import java.util.*;
 
 public class Parser {
-    public List<String> infixToPostfix(String expression) {
+    public List<String> infixToPostfix(String expression) throws InvalidOperator {
         List<String> output = new ArrayList<>(); // 후위 표기식 결과
         Stack<String> operators = new Stack<>(); // 연산자 스택
 
@@ -58,11 +58,16 @@ public class Parser {
         return output;
     }
 
-    public static boolean isNumeric(String str) {
+    public static boolean isNumeric(String str) throws InvalidOperator {
         try {
             Double.parseDouble(str);
             return true;
         } catch (NumberFormatException e) {
+            for (int i = 0; i < 10; i++) {
+                if (str.contains(Integer.toString(i))) {
+                    throw new InvalidOperator();
+                }
+            }
             return false;
         }
     }
