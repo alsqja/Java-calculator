@@ -26,7 +26,14 @@ public class App {
                 case '+' -> System.out.println(firstNumber + secondNumber);
                 case '-' -> System.out.println(firstNumber - secondNumber);
                 case '*' -> System.out.println(firstNumber * secondNumber);
-                case '/' -> System.out.println((double) firstNumber / secondNumber);
+                case '/' -> {
+                    if (secondNumber == 0) {
+                        System.out.println("0으로 나눌 수 없습니다.");
+                        continue;
+                    }
+                    System.out.println((double) firstNumber / secondNumber);
+                }
+                default -> System.out.println("지원하지 않는 연산자입니다.");
             }
 
 
