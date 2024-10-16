@@ -7,12 +7,21 @@
   - 사칙연산
   - 연산기호, 양의 정수 두개를 입력받음
   - 계산 결과 출력
+  - exit 입력 시 계산 종료
 - Lv2
   - Lv1 모든 기능
   - 연산된 결과들을 저장
   - `get`을 통해 결과 목록 출력
   - `set`을 입력하고 수정될 index, 수정할 value를 입력해 결과 목록 수정
   - `delete`를 통해 결과 목록 중 첫번째 결과 삭제
+- Lv3
+  - Lv1, Lv2 모든 기능
+  - `bigger`를 입력하고 기준이 될 값을 입력해 그 값보다 큰 결과 목록 출력
+  - 실수(double) 값을 입력해도 계산이 가능
+- Advanced
+  - Lv1, Lv2, Lv3 모든 기능
+  - 수식으로 입력받아 계산
+  - 괄호, 연산자 별 우선순위 처리
 
 ## Requirements
 - Lv1
@@ -43,4 +52,19 @@
     - [x] 간접 접근을 통해 필드에 접근하여 수정할 수 있도록 구현(Setter)
     - [x] 위 요구사항을 모두 구현 했다면 App 클래스의 main 메서드 위에서 구현한 메서드 활용
   - [x] Calculator 클래스에 저장된 연산 결과들 중 가장 먼저 저장된 데이터를 삭제하는 기능을 가진 메서드를 구현한 후 App 클래스의 main 메서드에 삭제 메서드가 활용될 수 있도록 수정
+- Lv3
+  - [x] Enum 타입을 활용하여 연산자 타입에 대한 정보를 관리하고 이를 사칙연산 계산기 ArithmeticCalculator 클래스에 활용
+  - [x] 실수, 즉 double 타입의 값을 전달 받아도 연산이 수행되도록 만들기
+    - [x] 제네릭 활용
+    - [x] 피연산자를 여러타입으로 받을 수 있도록 기능 확장
+  - [x] 저장된 연산 결과들 중 Scanner로 입력받은 값보다 큰 결과값 들을 출력
+    - [x] ArithmeticCalculator 클래스에 위 요구사항을 만족하는 조회 메서드 구현
+    - [x] Lambda & Stream 활용
+- Advanced
+  - [x] Shunting Yard Algorithm 을 활용하여 수식 형태로 입력받아 계산
+  - [x] 추상클래스를 활용한 연산
+  - [x] Exception 을 이용한 예외 처리
 
+## TroubleShooting
+- [동적으로 제네릭 타입 정하기](https://velog.io/@alsqja2626/Trouble-Shooting-input-type%EC%97%90-%EB%94%B0%EB%A5%B8-Generic-%EC%84%A4%EC%A0%95)
+- [추상클래스의 예외 처리](https://velog.io/@alsqja2626/TroubleShooting-%EC%B6%94%EC%83%81-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%9D%98-%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%AC)
