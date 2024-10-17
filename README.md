@@ -97,3 +97,4 @@
 ## TroubleShooting
 - [동적으로 제네릭 타입 정하기](https://velog.io/@alsqja2626/Trouble-Shooting-input-type%EC%97%90-%EB%94%B0%EB%A5%B8-Generic-%EC%84%A4%EC%A0%95)
 - [추상클래스의 예외 처리](https://velog.io/@alsqja2626/TroubleShooting-%EC%B6%94%EC%83%81-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%9D%98-%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%AC)
+- [수식 계산과 차량기지 알고리즘(Shunting Yard)](https://velog.io/@alsqja2626/TroubleShooting-%EC%88%98%EC%8B%9D-%EA%B3%84%EC%82%B0%EA%B3%BC-%EC%B0%A8%EB%9F%89%EA%B8%B0%EC%A7%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98Shunting-Yard)
