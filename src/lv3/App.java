@@ -50,6 +50,10 @@ public class App {
                         System.out.println(answer + " 삭제 완료");
                         continue;
                     }
+                    default: {
+                        System.out.println("잘못된 입력입니다.");
+                        continue;
+                    }
                 }
             }
             System.out.print("첫 번째 숫자를 입력하세요: ");

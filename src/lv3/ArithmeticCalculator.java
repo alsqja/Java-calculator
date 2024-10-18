@@ -25,7 +25,7 @@ enum OperType {
                 return type;
             }
         }
-        return null;
+        throw new IllegalArgumentException("해당하는 연산자가 없습니다.");
     }
 }
 
@@ -35,10 +35,6 @@ public class ArithmeticCalculator<T extends Number> {
 
     public double calculate(T firstNumber, T secondNumber, String operator) {
         this.operator = OperType.fromOperator(operator);
-
-        if (this.operator == null) {
-            throw new IllegalArgumentException("유효하지 않은 연산자입니다.");
-        }
 
         switch (this.operator) {
             case ADD -> {
