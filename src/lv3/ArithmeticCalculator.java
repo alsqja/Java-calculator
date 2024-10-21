@@ -19,7 +19,7 @@ enum OperType {
         return operator;
     }
 
-    public static OperType fromOperator(String operator) {
+    public static OperType fromOperator(String operator) throws IllegalArgumentException {
         for (OperType type : OperType.values()) {
             if (type.getOperator().equals(operator)) {
                 return type;
@@ -30,13 +30,10 @@ enum OperType {
 }
 
 public class ArithmeticCalculator<T extends Number> {
-    private OperType operator;
     private final List<Double> answers = new ArrayList<>();
 
     public double calculate(T firstNumber, T secondNumber, String operator) {
-        this.operator = OperType.fromOperator(operator);
-
-        switch (this.operator) {
+        switch (OperType.fromOperator(operator)) {
             case ADD -> {
                 this.answers.add(firstNumber.doubleValue() + secondNumber.doubleValue());
                 return firstNumber.doubleValue() + secondNumber.doubleValue();

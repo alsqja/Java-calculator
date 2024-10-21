@@ -66,12 +66,16 @@ public class App {
             String secondInput = sc.next();
 
             // 입력된 값이 정수인지 실수인지 판별하여 적절한 타입 선택
-            Number firstNumber = parseNumber(firstInput);
-            Number secondNumber = parseNumber(secondInput);
+            Number firstNumber;
+            Number secondNumber;
 
-            if (firstNumber == null || secondNumber == null) {
+            try {
+                // 입력된 값이 정수인지 실수인지 판별하여 적절한 타입 선택
+                firstNumber = parseNumber(firstInput);
+                secondNumber = parseNumber(secondInput);
+            } catch (NumberFormatException e) {
                 System.out.println("잘못된 숫자 입력입니다.");
-                return;
+                continue;
             }
 
             // 적절한 제네릭 타입으로 계산기 클래스 인스턴스화
@@ -82,16 +86,10 @@ public class App {
         sc.close();
     }
 
-    public static Number parseNumber(String input) {
-        try {
-            if (input.contains(".")) {
-                return Double.parseDouble(input); // 소수점이 있으면 Double로 처리
-            } else {
-                return Integer.parseInt(input); // 정수면 Integer로 처리
-            }
-        } catch (NumberFormatException e) {
-            return null; // 숫자 형식이 잘못된 경우 null 반환
-        }
-    }
+    private static Number parseNumber(String input) throws NumberFormatException {
+        return input.contains(".")
+                ? Double.parseDouble(input)
+                : Integer.parseInt(input);
 
+    }
 }
