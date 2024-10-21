@@ -1,18 +1,15 @@
 package lv2;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 
 public class Calculator {
     private final List<Double> answers = new ArrayList<>();
 
     //  answers Getter
-    public double[] getAnswers() {
-        double[] returns = new double[this.answers.size()];
-        for (int i = 0; i < this.answers.size(); i++) {
-            returns[i] = this.answers.get(i);
-        }
-        return returns;
+    public List<Double> getAnswers() {
+        return this.answers;
     }
 
     //  answers 가장 먼저 저당된 데이터 삭제 메서드
@@ -21,37 +18,31 @@ public class Calculator {
     }
 
     //  answers Setter
-    public double setAnswers(int index, double value) {
+    public double setElemOfAnswers(int index, double value) {
         return this.answers.set(index, value);
     }
 
     public double calculate(int firstNum, int secondNum, String operator) {
-        double answer;
+        double answer = 0;
         switch (operator) {
             case "+" -> {
                 answer = firstNum + secondNum;
-                this.answers.add(answer);
-                return answer;
             }
             case "-" -> {
                 answer = firstNum - secondNum;
-                this.answers.add(answer);
-                return answer;
             }
             case "*" -> {
                 answer = firstNum * secondNum;
-                this.answers.add(answer);
-                return answer;
             }
             case "/" -> {
                 if (secondNum == 0) {
                     throw new ArithmeticException("0으로 나눌 수 없습니다.");
                 }
                 answer = (double) firstNum / secondNum;
-                this.answers.add(answer);
-                return answer;
             }
+            default -> throw new InputMismatchException("잘못된 연산자 입니다.");
         }
-        return 0;
+        this.answers.add(answer);
+        return answer;
     }
 }
