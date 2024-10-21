@@ -22,7 +22,7 @@ public class Calculator {
         return this.answers.set(index, value);
     }
 
-    public double calculate(int firstNum, int secondNum, String operator) {
+    public double calculate(int firstNum, int secondNum, String operator) throws ArithmeticException, InputMismatchException {
         double answer = 0;
         switch (operator) {
             case "+" -> {
