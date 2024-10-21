@@ -8,8 +8,10 @@ public class App {
         String scInput;
         do {
             Scanner sc = new Scanner(System.in);
+
             int firstNumber;
             int secondNumber;
+
             System.out.print("첫번째 양의 정수를 입력하세요: ");
             firstNumber = sc.nextInt();
 
@@ -38,6 +40,7 @@ public class App {
 
 
         } while (!scInput.equals("exit"));
+        
         System.out.println("프로그램 종료");
     }
 }
